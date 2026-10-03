@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Helios Creative — Boas empresas merecem ser bem apresentadas</title>
 <meta name="description" content="Criamos sites e landing pages que transformam a essência, o valor e o posicionamento da sua empresa em experiências digitais à altura do que você construiu.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Helios Creative — Boas empresas merecem ser bem apresentadas">
 <meta property="og:description" content="Criamos sites e landing pages que transformam a essência, o valor e o posicionamento da sua empresa em experiências digitais à altura do que você construiu.">
@@ -67,8 +67,6 @@
   nav{position:fixed;top:14px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 16px}
   .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;max-width:1000px;padding:10px 10px 10px 18px;border-radius:14px;background:rgba(18,14,12,.62);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line)}
   .logo{white-space:nowrap;display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px;letter-spacing:-.02em}
-  .logo-mark{width:28px;height:28px;border-radius:8px;background:radial-gradient(circle at 50% 120%,#ffb38a 0%,var(--accent) 45%,#6b1f06 100%);position:relative;overflow:hidden;box-shadow:0 0 18px var(--accent-glow);flex:none}
-  .logo-mark::after{content:"";position:absolute;left:50%;bottom:-9px;width:22px;height:22px;transform:translateX(-50%);border-radius:50%;border:2px solid rgba(255,255,255,.9)}
   .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
   .nav-links a:hover{color:#fff}
   .nav-in .btn{padding:10px 16px;font-size:12px}
@@ -161,20 +159,8 @@
   /* ---------- PHILOSOPHY ---------- */
   .philo .top{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:end}
   .philo .top .lead{font-size:clamp(18px,1.8vw,21px);color:#d6cfca}
-  .understand{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:64px}
-  .u{position:relative;padding:26px 24px;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(180deg,var(--panel-2),var(--panel));overflow:hidden;transition:border-color .4s,transform .4s}
-  .u::before{content:"";position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--accent-2),transparent)}
-  .u:hover{border-color:rgba(255,122,61,.35);transform:translateY(-3px)}
-  .u .n{font-size:12px;color:var(--accent-2);font-weight:600;letter-spacing:.1em}
-  .u p{font-size:clamp(20px,2vw,24px);letter-spacing:-.02em;font-weight:500;margin-top:22px}
-  .then{margin-top:70px;text-align:center;color:var(--muted);font-size:clamp(18px,1.8vw,21px)}
-  .flow{display:flex;align-items:stretch;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
-  .flow .t{flex:1 1 200px;max-width:250px;padding:26px 20px;border-radius:16px;border:1px solid var(--line);background:radial-gradient(120% 90% at 50% 0%,rgba(255,90,31,.22),transparent 60%),var(--panel);text-align:center}
-  .flow .t svg{width:26px;height:26px;stroke:var(--accent-2);margin-bottom:14px}
-  .flow .t span{display:block;font-size:21px;font-weight:500;letter-spacing:-.02em}
-  .flow .t em{display:block;font-style:normal;font-size:12px;color:var(--dim);letter-spacing:.1em;margin-bottom:6px}
-  .flow .arr{display:grid;place-items:center;color:var(--accent-2);width:24px}
-  .flow .arr svg{width:20px;height:20px}
+  .then{margin:90px auto 0;max-width:760px;text-align:center;font-size:clamp(26px,3.2vw,40px);line-height:1.15;letter-spacing:-.03em;font-weight:500;color:#fff}
+  .then span{background:linear-gradient(90deg,#ff5a1f,#ff8a4c);-webkit-background-clip:text;background-clip:text;color:transparent}
 
   /* ---------- PORTFOLIO ---------- */
   .pf-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:64px}
@@ -204,11 +190,6 @@
   .cta-box .lead{margin:26px auto 34px}
 
   /* ---------- FOOTER ---------- */
-  footer{border-top:1px solid var(--line);padding:70px 0 40px;margin-top:40px;background:radial-gradient(50% 120% at 50% 100%,rgba(255,90,31,.28),transparent 70%);overflow:hidden}
-  .foot-brand{text-align:center}
-  .foot-brand .word{font-size:clamp(40px,10.5vw,140px);font-weight:600;letter-spacing:-.05em;line-height:.9;white-space:nowrap;background:linear-gradient(180deg,#fff 20%,rgba(255,255,255,.05));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .foot-brand p{color:var(--muted);margin-top:18px;font-size:17px}
-  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--dim);font-size:14px;margin-top:60px;padding-top:24px;border-top:1px solid var(--line)}
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:980px){
@@ -223,16 +204,11 @@
     .pf.span3,.pf.span2{grid-column:span 1}
     .pf:last-child{grid-column:span 2}
     .philo .top{gap:20px}
-    .understand{grid-template-columns:1fr 1fr}
-    .flow{display:grid;grid-template-columns:1fr 1fr}
-    .flow .arr{display:none}
-    .flow .t{max-width:none;padding:22px 14px}
     .sec{padding:96px 0}
   }
   @media (max-width:560px){
     .wrap{padding:0 16px}
     .panel{padding:80px 18px 64px;border-radius:20px}
-    .understand{grid-template-columns:1fr}
     .pf-grid{grid-template-columns:1fr}
     .pf:last-child{grid-column:span 1}
     .shot{height:320px}
@@ -243,45 +219,291 @@
     .nav-in{padding-left:12px}
     .nav-in .btn{padding:9px 12px;font-size:11px}
     .logo{font-size:16px}
-    .foot-brand .word{font-size:11vw}
   }
   @media (max-width:420px){
     .nav-in{gap:12px;padding:8px 8px 8px 12px}
     .nav-in .btn{padding:9px 10px;font-size:10.5px;letter-spacing:.02em}
     .logo{font-size:15px;gap:8px}
-    .logo-mark{width:24px;height:24px}
   }
   @media (prefers-reduced-motion:reduce){
     .rv{opacity:1;transform:none;filter:none;transition:none}
     .float-tag,.cursor{animation:none}
     html{scroll-behavior:auto}
   }
+
+  /* =========================================================
+     EFEITOS (inspirados nos componentes da 21st.dev)
+     ========================================================= */
+
+  /* Barra de progresso de leitura */
+  .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#ff5a1f,#ffb38a);box-shadow:0 0 12px rgba(255,90,31,.8);z-index:60;pointer-events:none}
+
+  /* Nav compacta ao rolar */
+  .nav-in{transition:max-width .5s cubic-bezier(.2,.7,.2,1),background .4s,box-shadow .4s}
+  nav.scrolled .nav-in{max-width:880px;background:rgba(14,11,10,.82);box-shadow:0 10px 40px -10px rgba(0,0,0,.8),0 0 0 1px rgba(255,90,31,.12)}
+
+  /* Hero: grade + feixes de luz subindo */
+  .hero-grid{position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;mask:radial-gradient(60% 55% at 50% 45%,#000 20%,transparent 75%);-webkit-mask:radial-gradient(60% 55% at 50% 45%,#000 20%,transparent 75%)}
+  .beams{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .beams i{position:absolute;bottom:-20%;width:1px;height:140px;background:linear-gradient(180deg,transparent,rgba(255,138,76,.9),transparent);opacity:0;animation:beam linear infinite}
+  @keyframes beam{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(-120vh);opacity:0}}
+  .arc{animation:breathe 7s ease-in-out infinite}
+  @keyframes breathe{50%{filter:brightness(1.25) saturate(1.1)}}
+
+  /* Título do hero: palavras entram com blur */
+  .split-words .wd{display:inline-block;opacity:0;transform:translateY(.45em);filter:blur(10px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
+  .split-words.go .wd{opacity:1;transform:none;filter:none}
+  .h1-wrap.rv{opacity:1;transform:none;filter:none}
+  .split-words .grey .wd{background:linear-gradient(90deg,#ff5a1f,#ff8a4c);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Botão com brilho passando (shimmer) */
+  .btn-primary,.btn-light{position:relative;overflow:hidden;isolation:isolate}
+  .btn-primary::after,.btn-light::after{content:"";position:absolute;inset:-2px;z-index:-1;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);transform:translateX(-120%);animation:shine 4.5s ease-in-out infinite}
+  @keyframes shine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+
+  /* Badge com borda girando (border beam) */
+  @property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+  .badge{position:relative;isolation:isolate;overflow:hidden;border-color:transparent}
+  .badge::before{content:"";position:absolute;inset:-1px;z-index:-2;background:conic-gradient(from var(--a),rgba(255,255,255,.08) 0 65%,#ff7a3d 85%,rgba(255,255,255,.08) 100%);animation:spin 4s linear infinite}
+  .badge::after{content:"";position:absolute;inset:1px;z-index:-1;border-radius:inherit;background:#0e0b0a}
+  @keyframes spin{to{--a:360deg}}
+
+  /* Holofote seguindo o cursor nos cards */
+  .spot{position:relative}
+  .spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,122,61,.14),transparent 45%);z-index:3}
+  .spot:hover::after{opacity:1}
+  .spot-b::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,138,76,.9),transparent 60%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:4}
+  .spot-b:hover::before{opacity:1}
+
+  /* Faixa infinita (marquee) */
+  .marquee{position:relative;overflow:hidden;padding:26px 0;border-block:1px solid var(--line);background:linear-gradient(180deg,rgba(255,90,31,.04),transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-track span{display:inline-flex;align-items:center;gap:28px;padding-right:28px;font-size:clamp(20px,2.4vw,30px);font-weight:500;letter-spacing:-.02em;color:#d6cfca;white-space:nowrap}
+  .marquee-track span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent-glow)}
+  .marquee-track span:nth-child(even){color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35)}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+
+  /* Ícones com brilho pulsando */
+  .chip .ic,.svc .tag i{animation:pulse 3s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 26px rgba(255,90,31,.85)}}
+
+  @media (hover:none){.spot::after,.spot-b::before{display:none}}
+  @media (prefers-reduced-motion:reduce){
+    .beams{display:none}
+    .arc,.badge::before,.btn-primary::after,.btn-light::after,.marquee-track,.chip .ic,.svc .tag i{animation:none}
+    .split-words .wd{opacity:1;transform:none;filter:none;transition:none}
+  }
+
+  /* =========================================================
+     TIMELINE HORIZONTAL (GSAP + ScrollTrigger)
+     ========================================================= */
+  .hz{position:relative;margin-top:70px}
+  .hz-pin{position:relative;height:100vh;min-height:560px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;border-block:1px solid var(--line)}
+  .hz-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 60% at var(--gx,20%) 55%,rgba(255,90,31,.16),transparent 70%),linear-gradient(180deg,#050403,#000 40%,#050403)}
+  .hz-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:120px 100%;mask:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);-webkit-mask:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent)}
+  .hz-head{position:absolute;top:clamp(90px,13vh,130px);left:0;right:0;display:flex;justify-content:flex-end;align-items:center;z-index:2}
+  .hz-label{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-2)}
+  .hz-label i{width:28px;height:1px;background:var(--accent-2)}
+  .hz-count{display:flex;align-items:baseline;gap:8px;font-variant-numeric:tabular-nums;color:var(--dim);font-size:14px;letter-spacing:.1em}
+  .hz-count b{font-size:clamp(28px,3vw,40px);font-weight:500;color:#fff;letter-spacing:-.02em}
+
+  .hz-track{position:relative;z-index:1;display:flex;gap:0;padding-left:calc((100vw - var(--iw)) / 2);padding-right:calc((100vw - var(--iw)) / 2);width:max-content;will-change:transform;--iw:min(1000px,78vw)}
+  .hz-item{position:relative;width:var(--iw);flex:none;height:clamp(300px,46vh,440px);display:flex;align-items:center;padding:0 4vw}
+  .hz-ghost{position:absolute;right:2vw;top:50%;transform:translateY(-50%);font-size:clamp(160px,26vw,380px);font-weight:600;letter-spacing:-.06em;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);pointer-events:none;user-select:none}
+  .hz-card{position:relative}
+  .hz-num{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--dim);letter-spacing:.14em;font-variant-numeric:tabular-nums}
+  .hz-num i{width:36px;height:1px;background:rgba(255,255,255,.2)}
+  .hz-kick{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-2)}
+  .hz-kick::before{content:"";width:28px;height:1px;background:var(--accent-2)}
+  .hz-word{position:relative;margin-top:18px;font-size:clamp(46px,8.4vw,128px);line-height:.98;letter-spacing:-.05em;font-weight:500;white-space:nowrap}
+  .hz-word em{font-style:normal}
+  .hz-o{display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.22)}
+  .hz-f{position:absolute;inset:0;display:block;color:#fff;clip-path:inset(-25% 100% -25% 0)}
+  .hz-f em{background:linear-gradient(90deg,#ff5a1f,#ffb38a);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .hz-timeline{position:absolute;left:0;right:0;bottom:clamp(40px,8vh,80px);z-index:2}
+  .hz-rail{position:relative;height:1px;background:rgba(255,255,255,.1)}
+  .hz-fill{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#ff5a1f,#ffb38a);box-shadow:0 0 14px rgba(255,90,31,.9)}
+  .hz-dots{list-style:none;display:flex;justify-content:space-between;margin-top:-5px}
+  .hz-dots li{position:relative;width:9px;height:9px}
+  .hz-dots li em{position:absolute;top:22px;left:50%;transform:translateX(-50%)}
+  .hz-dots li:first-child em{left:0;transform:none}
+  .hz-dots li:last-child em{left:auto;right:0;transform:none}
+  .hz-dots span{display:block;width:9px;height:9px;border-radius:50%;background:#1a1512;border:1px solid rgba(255,255,255,.25);transition:background .4s,border-color .4s,box-shadow .4s,transform .4s}
+  .hz-dots em{font-style:normal;font-size:12px;letter-spacing:.06em;color:var(--dim);white-space:nowrap;transition:color .4s}
+  .hz-dots li.on span{background:var(--accent);border-color:var(--accent);box-shadow:0 0 14px rgba(255,90,31,.9)}
+  .hz-dots li.now span{transform:scale(1.6)}
+  .hz-dots li.on em{color:#d6cfca}
+  .hz-dots li.now em{color:#fff}
+
+  /* Sem GSAP / movimento reduzido: vira lista vertical */
+  .hz:not(.hz-on) .hz-pin{height:auto;min-height:0;padding:40px 0}
+  .hz:not(.hz-on) .hz-head{position:relative;top:auto;margin-bottom:10px}
+  .hz:not(.hz-on) .hz-count,.hz:not(.hz-on) .hz-timeline,.hz:not(.hz-on) .hz-ghost{display:none}
+  .hz:not(.hz-on) .hz-track{flex-direction:column;width:auto;padding:0;--iw:100%}
+  .hz:not(.hz-on) .hz-item{height:auto;padding:22px 24px;max-width:1160px;margin:0 auto;border-bottom:1px solid var(--line)}
+  .hz:not(.hz-on) .hz-kick{font-size:11px}
+  .hz:not(.hz-on) .hz-word{font-size:clamp(32px,6vw,64px);white-space:normal}
+  .hz:not(.hz-on) .hz-o{display:none}
+  .hz:not(.hz-on) .hz-f{position:relative;clip-path:none}
+
+  @media (max-width:700px){
+    .hz-track{--iw:88vw}
+    .hz-item{padding:0 6vw}
+    .hz-word{font-size:clamp(38px,11vw,64px);white-space:normal}
+    .hz-dots em{display:none}
+    .hz-ghost{font-size:48vw;right:0}
+  }
+
+  /* =========================================================
+     PROCESSO (linha que preenche com a rolagem)
+     ========================================================= */
+  .steps{--n:4;list-style:none;position:relative;display:grid;grid-template-columns:repeat(var(--n),1fr);margin-top:70px;padding-top:34px}
+  .steps-rail{position:absolute;top:0;left:calc(50% / var(--n));right:calc(50% / var(--n));height:1px;background:rgba(255,255,255,.1)}
+  .steps-fill{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#ff5a1f,#ffb38a);box-shadow:0 0 14px rgba(255,90,31,.9)}
+  .step{position:relative;text-align:center;padding:30px 18px 10px}
+  .step + .step::before{content:"";position:absolute;left:0;top:34px;bottom:0;width:1px;background:linear-gradient(180deg,var(--line),transparent)}
+  .step-dot{position:absolute;top:-39px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:#0e0b0a;border:1px solid rgba(255,255,255,.25);transition:background .5s,border-color .5s,box-shadow .5s,transform .5s}
+  .step-n{display:block;font-size:clamp(64px,7vw,104px);font-weight:600;line-height:.9;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.12);transition:-webkit-text-stroke-color .6s,color .6s}
+  .step-body{margin-top:18px;position:relative}
+  .step-ic{width:26px;height:26px;stroke:var(--dim);transition:stroke .5s,transform .5s}
+  .step h4{margin-top:12px;font-size:clamp(19px,1.7vw,23px);font-weight:500;letter-spacing:-.02em;color:var(--muted);transition:color .5s}
+  .step.on .step-dot{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px rgba(255,90,31,.15),0 0 18px rgba(255,90,31,.9);transform:scale(1.15)}
+  .step.on .step-n{-webkit-text-stroke-color:rgba(255,122,61,.55)}
+  .step.on .step-ic{stroke:var(--accent-2);transform:translateY(-2px)}
+  .step.on h4{color:#fff}
+
+  @media (max-width:760px){
+    .steps{grid-template-columns:1fr;padding-top:0;padding-left:34px;margin-top:50px}
+    .steps-rail{top:10px;bottom:10px;left:5px;right:auto;width:1px;height:auto}
+    .steps-fill{transform-origin:50% 0;transform:scaleY(0);background:linear-gradient(180deg,#ff5a1f,#ffb38a)}
+    .step{text-align:left;padding:18px 0 22px;display:flex;align-items:center;gap:18px}
+    .step + .step::before{left:0;right:0;top:0;bottom:auto;width:auto;height:1px;background:var(--line)}
+    .step-dot{top:50%;left:-34px;margin:-5.5px 0 0}
+    .step-n{font-size:54px;min-width:74px}
+    .step-body{margin-top:0;display:flex;align-items:center;gap:12px}
+    .step h4{margin-top:0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .steps-fill{transform:none}
+  }
+
+  /* =========================================================
+     LOGO
+     ========================================================= */
+  .logo img{display:block;height:30px;width:auto}
+  @media (max-width:420px){.logo img{height:24px}}
+
+  /* =========================================================
+     MODAL DE CONTATO
+     ========================================================= */
+  html{scrollbar-gutter:stable}
+  html.cm-lock{overflow:hidden}
+  .cm{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px}
+  .cm[hidden]{display:none}
+  .cm-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transition:opacity .35s}
+  .cm-panel{position:relative;width:100%;max-width:640px;max-height:calc(100dvh - 48px);overflow:auto;overscroll-behavior:contain;border-radius:24px;border:1px solid var(--line-2);background:radial-gradient(120% 60% at 50% -10%,rgba(255,90,31,.22),transparent 55%),#0c0a09;box-shadow:0 40px 120px -20px rgba(0,0,0,.9),0 0 0 1px rgba(255,90,31,.08);padding:40px 36px 30px;opacity:0;transform:translateY(24px) scale(.98);transition:opacity .4s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1)}
+  .cm.open .cm-backdrop{opacity:1}
+  .cm.open .cm-panel{opacity:1;transform:none}
+  .cm-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .25s,transform .25s}
+  .cm-close:hover{background:rgba(255,90,31,.2);transform:rotate(90deg)}
+  .cm-close svg{width:16px;height:16px}
+  .cm-head img{display:block;height:36px;width:auto;margin-bottom:18px}
+  .cm-head h2{font-size:clamp(26px,3.4vw,34px);line-height:1.1;letter-spacing:-.03em;font-weight:500;max-width:480px}
+  .cm-head h2 span{background:linear-gradient(90deg,#ff5a1f,#ff8a4c);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cm-head p{color:var(--muted);margin-top:10px;font-size:15.5px}
+  .cm-form{margin-top:28px;display:grid;gap:16px}
+  .cm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cm-wide{grid-column:1/-1}
+  .cm-field{display:grid;gap:7px}
+  .cm-field > span,.cm-need legend{font-size:13px;color:#d6cfca;font-weight:500}
+  .cm-field em{font-style:normal;color:var(--dim);font-weight:400}
+  .cm-field input,.cm-field textarea{width:100%;font:inherit;font-size:15px;color:#fff;background:rgba(255,255,255,.035);border:1px solid var(--line-2);border-radius:12px;padding:13px 14px;outline:none;transition:border-color .25s,background .25s,box-shadow .25s;resize:vertical}
+  .cm-field input::placeholder,.cm-field textarea::placeholder{color:#5c5652}
+  .cm-field input:focus,.cm-field textarea:focus{border-color:rgba(255,122,61,.7);background:rgba(255,90,31,.05);box-shadow:0 0 0 4px rgba(255,90,31,.12)}
+  .cm-field.bad input{border-color:#ff4d4d;box-shadow:0 0 0 4px rgba(255,77,77,.12)}
+  .cm-need{border:0;display:grid;gap:10px}
+  .cm-need.bad legend{color:#ff7b7b}
+  .cm-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .cm-chip{position:relative;cursor:pointer}
+  .cm-chip input{position:absolute;opacity:0;pointer-events:none}
+  .cm-chip span{display:inline-block;padding:9px 15px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);font-size:14px;color:#d6cfca;transition:all .25s}
+  .cm-chip:hover span{border-color:rgba(255,122,61,.5)}
+  .cm-chip input:checked + span{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 18px rgba(255,90,31,.45)}
+  .cm-chip input:focus-visible + span{outline:2px solid #ffb38a;outline-offset:2px}
+  .cm-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+  .cm-error{color:#ff8b7b;font-size:14px;background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.3);border-radius:10px;padding:10px 12px}
+  .cm-submit{justify-content:center;width:100%;padding:16px 22px;margin-top:4px}
+  .cm-submit[disabled]{opacity:.7;cursor:progress}
+  .cm-submit.loading svg{animation:cmspin .8s linear infinite}
+  @keyframes cmspin{to{transform:rotate(360deg)}}
+  .cm-note{text-align:center;font-size:12.5px;color:var(--dim)}
+  @media (max-width:600px){
+    .cm{padding:0;place-items:end stretch}
+    .cm-panel{max-width:none;max-height:92dvh;border-radius:22px 22px 0 0;padding:34px 20px 24px;transform:translateY(40px)}
+    .cm-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){.cm-panel,.cm-backdrop{transition:none}}
+
+  /* =========================================================
+     RODAPÉ
+     ========================================================= */
+  .ft{position:relative;margin-top:40px;border-top:1px solid var(--line);background:radial-gradient(60% 80% at 50% 0%,rgba(255,90,31,.10),transparent 70%),#050403;overflow:hidden}
+  .ft::before{content:"";position:absolute;top:-1px;left:50%;width:min(600px,70%);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#ff7a3d,transparent)}
+  .ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding:64px 0 52px}
+  .ft-logo img{display:block;height:40px;width:auto}
+  .ft-brand p{color:var(--muted);margin-top:18px;max-width:280px;font-size:15px;line-height:1.55}
+  .ft-col h3{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#d6cfca;margin-bottom:18px}
+  .ft-col ul{list-style:none;display:grid;gap:12px}
+  .ft-col a{color:var(--muted);font-size:15px;transition:color .25s;position:relative}
+  .ft-col a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--accent-2);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .ft-col a:hover{color:#fff}
+  .ft-col a:hover::after{transform:scaleX(1)}
+  .ft-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 0 30px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
+  .ft-top{display:inline-flex;align-items:center;gap:8px;color:var(--muted);transition:color .25s}
+  .ft-top svg{width:14px;height:14px;transition:transform .25s}
+  .ft-top:hover{color:#fff}
+  .ft-top:hover svg{transform:translateY(-3px)}
+  @media (max-width:900px){
+    .ft-grid{grid-template-columns:1fr 1fr;gap:36px 24px}
+    .ft-brand{grid-column:1/-1}
+  }
+  @media (max-width:560px){
+        .ft-grid{grid-template-columns:1fr 1fr}
+    .ft-bottom{flex-direction:column;align-items:flex-start}
+  }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
+<div class="progress" aria-hidden="true"></div>
+
 <nav>
   <div class="nav-in">
-    <a href="#top" class="logo"><span class="logo-mark"></span>Helios Creative</a>
+    <a href="#top" class="logo" aria-label="Helios Creative — início"><img src="assets/logo.svg" alt="Helios Creative" width="150" height="40"></a>
     <div class="nav-links">
       <a href="#quem-somos">Quem somos</a>
       <a href="#servicos">O que fazemos</a>
       <a href="#filosofia">Filosofia</a>
       <a href="#portfolio">Portfólio</a>
     </div>
-    <a href="#contato" class="btn btn-primary">Iniciar um projeto</a>
+    <a href="#contato" class="btn btn-primary" data-contact>Iniciar um projeto</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero center" id="top">
+  <div class="hero-grid"></div>
   <div class="stars"></div>
+  <div class="beams" aria-hidden="true"></div>
   <div class="hero-glow"></div>
   <div class="arc"></div>
   <div class="wrap">
     <span class="badge rv"><i></i>Helios Creative</span>
-    <h1 class="h-xl rv d1">Boas empresas merecem <span class="grey">ser bem apresentadas.</span></h1>
+    <h1 class="h-xl rv d1 h1-wrap split-words">Boas empresas merecem <span class="grey">ser bem apresentadas.</span></h1>
     <p class="lead rv d2">Criamos sites e landing pages que transformam a essência, o valor e o posicionamento da sua empresa em experiências digitais à altura do que você construiu.</p>
     <div class="rv d3">
       <a href="#quem-somos" class="btn btn-primary">Conheça a Helios
@@ -290,6 +512,9 @@
     </div>
   </div>
 </section>
+
+<!-- FAIXA -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Sites institucionais</span><span>Landing pages</span><span>SEO &amp; GEO</span><span>Estratégia</span><span>Comunicação</span><span>Design</span><span>Desenvolvimento</span><span>Sites institucionais</span><span>Landing pages</span><span>SEO &amp; GEO</span><span>Estratégia</span><span>Comunicação</span><span>Design</span><span>Desenvolvimento</span></div></div>
 
 <!-- MANIFESTO -->
 <section class="sec manifesto" id="manifesto">
@@ -436,25 +661,103 @@
       <p class="lead rv d2">Por isso, cada projeto começa antes do design.</p>
     </div>
 
-    <div class="understand">
-      <div class="u rv"><span class="n">ENTENDEMOS</span><p>Sua empresa.</p></div>
-      <div class="u rv d1"><span class="n">ENTENDEMOS</span><p>Seu momento.</p></div>
-      <div class="u rv d2"><span class="n">ENTENDEMOS</span><p>Seu público.</p></div>
-      <div class="u rv d3"><span class="n">ENTENDEMOS</span><p>Sua comunicação.</p></div>
-      <div class="u rv d4"><span class="n">ENTENDEMOS</span><p>Seus diferenciais.</p></div>
-      <div class="u rv d5"><span class="n">ENTENDEMOS</span><p>Seus objetivos.</p></div>
-    </div>
+  </div>
 
-    <p class="then rv">Então transformamos tudo isso em uma experiência digital.</p>
-    <div class="flow">
-      <div class="t rv d1"><em>01</em><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Estratégia</span></div>
-      <div class="arr rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="t rv d2"><em>02</em><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Comunicação</span></div>
-      <div class="arr rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="t rv d3"><em>03</em><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18zM2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg><span>Design</span></div>
-      <div class="arr rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="t rv d4"><em>04</em><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>Desenvolvimento</span></div>
+  <div class="hz" id="entendemos">
+    <div class="hz-pin">
+      <div class="hz-bg" aria-hidden="true"></div>
+      <div class="hz-head wrap">
+        <span class="hz-count"><b class="hz-cur">01</b><span>/ 06</span></span>
+      </div>
+      <div class="hz-track">
+        <article class="hz-item">
+          <span class="hz-ghost" aria-hidden="true">01</span>
+          <div class="hz-card">
+            <span class="hz-kick">Entendemos</span>
+            <h3 class="hz-word"><span class="hz-o" aria-hidden="true">Sua <em>empresa.</em></span><span class="hz-f">Sua <em>empresa.</em></span></h3>
+          </div>
+        </article>
+        <article class="hz-item">
+          <span class="hz-ghost" aria-hidden="true">02</span>
+          <div class="hz-card">
+            <span class="hz-kick">Entendemos</span>
+            <h3 class="hz-word"><span class="hz-o" aria-hidden="true">Seu <em>momento.</em></span><span class="hz-f">Seu <em>momento.</em></span></h3>
+          </div>
+        </article>
+        <article class="hz-item">
+          <span class="hz-ghost" aria-hidden="true">03</span>
+          <div class="hz-card">
+            <span class="hz-kick">Entendemos</span>
+            <h3 class="hz-word"><span class="hz-o" aria-hidden="true">Seu <em>público.</em></span><span class="hz-f">Seu <em>público.</em></span></h3>
+          </div>
+        </article>
+        <article class="hz-item">
+          <span class="hz-ghost" aria-hidden="true">04</span>
+          <div class="hz-card">
+            <span class="hz-kick">Entendemos</span>
+            <h3 class="hz-word"><span class="hz-o" aria-hidden="true">Sua <em>comunicação.</em></span><span class="hz-f">Sua <em>comunicação.</em></span></h3>
+          </div>
+        </article>
+        <article class="hz-item">
+          <span class="hz-ghost" aria-hidden="true">05</span>
+          <div class="hz-card">
+            <span class="hz-kick">Entendemos</span>
+            <h3 class="hz-word"><span class="hz-o" aria-hidden="true">Seus <em>diferenciais.</em></span><span class="hz-f">Seus <em>diferenciais.</em></span></h3>
+          </div>
+        </article>
+        <article class="hz-item">
+          <span class="hz-ghost" aria-hidden="true">06</span>
+          <div class="hz-card">
+            <span class="hz-kick">Entendemos</span>
+            <h3 class="hz-word"><span class="hz-o" aria-hidden="true">Seus <em>objetivos.</em></span><span class="hz-f">Seus <em>objetivos.</em></span></h3>
+          </div>
+        </article>
+      </div>
+      <div class="hz-timeline wrap" aria-hidden="true">
+        <div class="hz-rail"><i class="hz-fill"></i></div>
+        <ol class="hz-dots"><li><span></span><em>Empresa</em></li><li><span></span><em>Momento</em></li><li><span></span><em>Público</em></li><li><span></span><em>Comunicação</em></li><li><span></span><em>Diferenciais</em></li><li><span></span><em>Objetivos</em></li></ol>
+      </div>
     </div>
+  </div>
+
+  <div class="wrap">
+
+    <p class="then rv">Então transformamos tudo isso em <span>uma experiência digital.</span></p>
+    <ol class="steps">
+      <li class="steps-rail" aria-hidden="true"><i class="steps-fill"></i></li>
+      <li class="step">
+        <span class="step-dot" aria-hidden="true"></span>
+        <span class="step-n" aria-hidden="true">01</span>
+        <div class="step-body">
+          <svg class="step-ic" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+          <h4>Estratégia</h4>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-dot" aria-hidden="true"></span>
+        <span class="step-n" aria-hidden="true">02</span>
+        <div class="step-body">
+          <svg class="step-ic" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <h4>Comunicação</h4>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-dot" aria-hidden="true"></span>
+        <span class="step-n" aria-hidden="true">03</span>
+        <div class="step-body">
+          <svg class="step-ic" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18zM2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          <h4>Design</h4>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-dot" aria-hidden="true"></span>
+        <span class="step-n" aria-hidden="true">04</span>
+        <div class="step-body">
+          <svg class="step-ic" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <h4>Desenvolvimento</h4>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -490,7 +793,7 @@
     </div>
 
     <div class="pf-cta rv">
-      <a href="#" class="btn btn-primary">Ver nossos projetos
+      <a href="#contato" class="btn btn-primary" data-contact>Ver nossos projetos
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -506,7 +809,7 @@
       <p class="sub rv d2">Agora, vamos apresentá-la como ela merece.</p>
       <p class="lead rv d3">Conte para a Helios sobre seu próximo projeto.</p>
       <div class="rv d4">
-        <a href="#" class="btn btn-primary">Iniciar um projeto
+        <a href="#contato" class="btn btn-primary" data-contact>Iniciar um projeto
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
@@ -514,19 +817,88 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-brand">
-      <div class="word">HELIOS CREATIVE</div>
-      <p>Boas empresas merecem ser bem apresentadas.</p>
+
+<!-- MODAL DE CONTATO -->
+<div class="cm" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="cm-title" hidden>
+  <div class="cm-backdrop" data-close></div>
+  <div class="cm-panel" role="document">
+    <button class="cm-close" type="button" aria-label="Fechar" data-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="cm-head">
+      <img src="assets/logo-mark.svg" alt="" width="34" height="37">
+      <h2 id="cm-title">Conte para a Helios sobre seu <span>próximo projeto.</span></h2>
+      <p>Preencha os campos abaixo e retornamos com uma análise do seu projeto.</p>
     </div>
-    <div class="foot">
-      <a href="#top" class="logo" style="color:#fff"><span class="logo-mark"></span>Helios Creative</a>
-      <span>© <span id="y"></span> Helios Creative</span>
+    <form class="cm-form" id="contact-form" action="/api/contact" method="POST" novalidate>
+      <div class="cm-grid">
+        <label class="cm-field"><span>Nome</span><input name="nome" type="text" autocomplete="name" required placeholder="Seu nome"></label>
+        <label class="cm-field"><span>Empresa</span><input name="empresa" type="text" autocomplete="organization" required placeholder="Nome da empresa"></label>
+        <label class="cm-field"><span>WhatsApp</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></label>
+        <label class="cm-field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required placeholder="voce@empresa.com.br"></label>
+        <label class="cm-field cm-wide"><span>Site atual <em>(opcional)</em></span><input name="site" type="text" inputmode="url" placeholder="www.suaempresa.com.br"></label>
+      </div>
+      <fieldset class="cm-need">
+        <legend>O que você precisa?</legend>
+        <div class="cm-chips"><label class="cm-chip"><input type="radio" name="servico" value="Site institucional" required><span>Site institucional</span></label><label class="cm-chip"><input type="radio" name="servico" value="Landing page"><span>Landing page</span></label><label class="cm-chip"><input type="radio" name="servico" value="SEO &amp; GEO"><span>SEO &amp; GEO</span></label><label class="cm-chip"><input type="radio" name="servico" value="Ainda não sei"><span>Ainda não sei</span></label></div>
+      </fieldset>
+      <label class="cm-field cm-wide"><span>Conte um pouco sobre o projeto <em>(opcional)</em></span><textarea name="mensagem" rows="3" placeholder="Objetivo, prazo, referências…"></textarea></label>
+      <input class="cm-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="cm-error" role="alert" hidden></p>
+      <button class="btn btn-primary cm-submit" type="submit">
+        <span class="cm-label">Enviar projeto</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="cm-note">Seus dados são usados apenas para responder ao seu contato.</p>
+    </form>
+  </div>
+</div>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="#top" class="ft-logo" aria-label="Helios Creative — voltar ao topo"><img src="assets/logo.svg" alt="Helios Creative" width="180" height="48" loading="lazy"></a>
+        <p>Boas empresas merecem ser bem apresentadas.</p>
+      </div>
+
+      <div class="ft-col" role="navigation" aria-label="Navegação do rodapé">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#manifesto">Manifesto</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#filosofia">Filosofia</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h3>Serviços</h3>
+        <ul>
+          <li><a href="#servicos">Sites institucionais</a></li>
+          <li><a href="#servicos">Landing pages</a></li>
+          <li><a href="#servicos">SEO &amp; GEO</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="#contato" data-contact>Iniciar um projeto</a></li>
+          <li><a href="#contato" data-contact>Solicitar análise</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <span>© <span id="y"></span> Helios Creative. Todos os direitos reservados.</span>
+      <a href="#top" class="ft-top">Voltar ao topo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
     </div>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 
@@ -555,6 +927,252 @@
   addEventListener('scroll', paint, { passive: true });
   addEventListener('resize', paint);
   paint();
+
+  /* ---------- EFEITOS ---------- */
+  const reduceFx = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // Título do hero palavra por palavra
+  const h1 = document.querySelector('.split-words');
+  (function split(node) {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t => {
+          if (!t) return;
+          if (/^\s+$/.test(t)) { frag.appendChild(document.createTextNode(t)); return; }
+          const w = document.createElement('span'); w.className = 'wd'; w.textContent = t; frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) split(n);
+    });
+  })(h1);
+  h1.querySelectorAll('.wd').forEach((w, i) => w.style.transitionDelay = (0.15 + i * 0.07) + 's');
+  requestAnimationFrame(() => requestAnimationFrame(() => h1.classList.add('go')));
+
+  // Feixes de luz no hero
+  const beams = document.querySelector('.beams');
+  if (!reduceFx) for (let i = 0; i < 14; i++) {
+    const b = document.createElement('i');
+    b.style.left = (5 + Math.random() * 90) + '%';
+    b.style.animationDuration = (6 + Math.random() * 7) + 's';
+    b.style.animationDelay = (-Math.random() * 10) + 's';
+    b.style.height = (80 + Math.random() * 120) + 'px';
+    beams.appendChild(b);
+  }
+
+  // Barra de progresso + nav compacta
+  const bar = document.querySelector('.progress'), navEl = document.querySelector('nav');
+  function onScroll() {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+    navEl.classList.toggle('scrolled', scrollY > 40);
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Holofote seguindo o cursor
+  document.querySelectorAll('.card,.u,.svc,.pf,.about-cols p,.chip').forEach(el => {
+    el.classList.add('spot', 'spot-b');
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Inclinação 3D nos cards do portfólio e serviços
+  if (fine && !reduceFx) document.querySelectorAll('.pf,.svc').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      el.style.transition = 'transform .1s, border-color .4s';
+      el.style.transform = `perspective(1000px) rotateX(${-y * 5}deg) rotateY(${x * 6}deg) translateY(-4px)`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.transition = 'transform .6s cubic-bezier(.2,.7,.2,1), border-color .4s'; el.style.transform = ''; });
+  });
+
+  // Botões magnéticos
+  if (fine && !reduceFx) document.querySelectorAll('.btn').forEach(b => {
+    b.addEventListener('pointermove', e => {
+      const r = b.getBoundingClientRect();
+      b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .18}px,${(e.clientY - r.top - r.height / 2) * .28}px)`;
+    });
+    b.addEventListener('pointerleave', () => b.style.transform = '');
+  });
+
+
+  /* ---------- TIMELINE HORIZONTAL (GSAP) ---------- */
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    const mm = gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      const hz = document.querySelector('.hz');
+      const pin = hz.querySelector('.hz-pin');
+      const track = hz.querySelector('.hz-track');
+      const items = gsap.utils.toArray('.hz-item');
+      const dotsEls = gsap.utils.toArray('.hz-dots li');
+      const cur = hz.querySelector('.hz-cur');
+      const bg = hz.querySelector('.hz-bg');
+      hz.classList.add('hz-on');
+
+      // Centraliza o último tópico (não usa scrollWidth: o número gigante com parallax extrapola o trilho)
+      const distance = () => { const last = items[items.length - 1]; return last.offsetLeft + last.offsetWidth / 2 - window.innerWidth / 2; };
+
+      // Timeline principal: move o trilho (filho do pin) — ease "none" obrigatório
+      const tl = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          trigger: pin,
+          pin: true,
+          start: 'top top',
+          end: () => '+=' + distance() * 1.15,
+          scrub: 1,
+          invalidateOnRefresh: true,
+          onUpdate: self => {
+            const idx = Math.min(items.length - 1, Math.round(self.progress * (items.length - 1)));
+            cur.textContent = String(idx + 1).padStart(2, '0');
+            dotsEls.forEach((d, i) => { d.classList.toggle('on', i <= idx); d.classList.toggle('now', i === idx); });
+          }
+        }
+      });
+      tl.to(track, { x: () => -distance() }, 0)
+        .to('.hz-fill', { scaleX: 1 }, 0)
+        .fromTo(bg, { '--gx': '15%' }, { '--gx': '85%' }, 0);
+
+      // Animações de cada tópico, amarradas ao movimento horizontal
+      items.forEach(item => {
+        const word = item.querySelector('.hz-word');
+        const fill = item.querySelector('.hz-f');
+        const meta = item.querySelectorAll('.hz-kick');
+        const ghost = item.querySelector('.hz-ghost');
+
+        gsap.fromTo(fill, { clipPath: 'inset(-25% 100% -25% 0)' }, {
+          clipPath: 'inset(-25% 0% -25% 0)', ease: 'none',
+          scrollTrigger: { containerAnimation: tl, trigger: item, start: 'left 70%', end: 'center 50%', scrub: true }
+        });
+        gsap.fromTo(word, { opacity: .35, y: 30, filter: 'blur(6px)' }, {
+          opacity: 1, y: 0, filter: 'blur(0px)', ease: 'none',
+          scrollTrigger: { containerAnimation: tl, trigger: item, start: 'left 95%', end: 'center 60%', scrub: true }
+        });
+        gsap.fromTo(meta, { opacity: 0, y: 16 }, {
+          opacity: 1, y: 0, stagger: .1, ease: 'none',
+          scrollTrigger: { containerAnimation: tl, trigger: item, start: 'left 80%', end: 'center 60%', scrub: true }
+        });
+        gsap.fromTo(ghost, { xPercent: 30 }, {
+          xPercent: -30, ease: 'none',
+          scrollTrigger: { containerAnimation: tl, trigger: item, start: 'left right', end: 'right left', scrub: true }
+        });
+      });
+
+      return () => hz.classList.remove('hz-on');
+    });
+
+    document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
+    addEventListener('load', () => ScrollTrigger.refresh());
+  }
+
+  /* ---------- PROCESSO: linha preenche e acende os passos ---------- */
+  (function () {
+    const stepEls = [...document.querySelectorAll('.step')];
+    const fill = document.querySelector('.steps-fill');
+    const light = p => stepEls.forEach((el, i) => el.classList.toggle('on', p >= i / (stepEls.length - 1) - 0.001));
+    if (!(window.gsap && window.ScrollTrigger) || matchMedia('(prefers-reduced-motion: reduce)').matches) { light(1); return; }
+    const mm = gsap.matchMedia();
+    mm.add({ desk: '(min-width: 761px)', mob: '(max-width: 760px)' }, ctx => {
+      const prop = ctx.conditions.desk ? 'scaleX' : 'scaleY';
+      gsap.fromTo(fill, { [prop]: 0 }, {
+        [prop]: 1, ease: 'none',
+        scrollTrigger: {
+          trigger: '.steps', start: ctx.conditions.desk ? 'top 75%' : 'top 70%', end: ctx.conditions.desk ? 'top 35%' : 'bottom 55%', scrub: .6,
+          onUpdate: self => light(self.progress)
+        }
+      });
+      return () => stepEls.forEach(el => el.classList.remove('on'));
+    });
+  })();
+
+  /* ---------- MODAL DE CONTATO ---------- */
+  (function () {
+    const modal = document.getElementById('contact-modal');
+    const form = document.getElementById('contact-form');
+    const panel = modal.querySelector('.cm-panel');
+    const errBox = form.querySelector('.cm-error');
+    const btn = form.querySelector('.cm-submit');
+    let lastFocus = null;
+
+    function open(e) {
+      if (e) e.preventDefault();
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      document.documentElement.classList.add('cm-lock');
+      requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('open')));
+      setTimeout(() => form.querySelector('input[name="nome"]').focus({ preventScroll: true }), 200);
+    }
+    function close() {
+      modal.classList.remove('open');
+      document.documentElement.classList.remove('cm-lock');
+      setTimeout(() => { modal.hidden = true; }, 380);
+      if (lastFocus) lastFocus.focus({ preventScroll: true });
+    }
+    document.querySelectorAll('[data-contact]').forEach(el => el.addEventListener('click', open));
+    modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', e => {
+      if (modal.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'Tab') { // mantém o foco dentro do modal
+        const f = [...panel.querySelectorAll('button, input:not(.cm-hp), textarea, [href]')].filter(x => !x.disabled && x.offsetParent);
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    if (location.hash === '#contato') open();
+
+    // Máscara de WhatsApp (BR)
+    const tel = form.elements.whatsapp;
+    tel.addEventListener('input', () => {
+      const d = tel.value.replace(/\D/g, '').slice(0, 11);
+      tel.value = d.length <= 2 ? (d ? '(' + d : '')
+        : d.length <= 6 ? `(${d.slice(0, 2)}) ${d.slice(2)}`
+        : d.length <= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`
+        : `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+    });
+
+    function validate() {
+      let ok = true;
+      ['nome', 'empresa', 'whatsapp', 'email'].forEach(n => {
+        const el = form.elements[n];
+        let good = el.value.trim().length > 1;
+        if (n === 'email') good = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (n === 'whatsapp') good = el.value.replace(/\D/g, '').length >= 10;
+        el.closest('.cm-field').classList.toggle('bad', !good);
+        if (!good && ok) el.focus();
+        ok = ok && good;
+      });
+      const need = form.querySelector('.cm-need');
+      const picked = !!form.querySelector('input[name="servico"]:checked');
+      need.classList.toggle('bad', !picked);
+      return ok && picked;
+    }
+    form.addEventListener('input', e => e.target.closest('.cm-field')?.classList.remove('bad'));
+    form.addEventListener('change', e => { if (e.target.name === 'servico') form.querySelector('.cm-need').classList.remove('bad'); });
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      errBox.hidden = true;
+      if (!validate()) { errBox.textContent = 'Confira os campos destacados.'; errBox.hidden = false; return; }
+      btn.disabled = true; btn.classList.add('loading'); btn.querySelector('.cm-label').textContent = 'Enviando…';
+      try {
+        const data = Object.fromEntries(new FormData(form));
+        const r = await fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || 'Falha no envio');
+        location.href = '/obrigado';
+      } catch (err) {
+        errBox.textContent = 'Não foi possível enviar agora. Tente novamente em instantes.';
+        errBox.hidden = false;
+        btn.disabled = false; btn.classList.remove('loading'); btn.querySelector('.cm-label').textContent = 'Enviar projeto';
+      }
+    });
+  })();
 </script>
 </body>
 </html>
