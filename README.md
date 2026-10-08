@@ -48,6 +48,14 @@ Sem domínio verificado, o Resend só entrega para o e-mail da própria conta Re
 
 Depois do envio, o visitante vai para `/obrigado` (útil para medir conversões no Google Ads / Meta).
 
+## Receber e-mails (Resend Inbound)
+
+E-mails enviados para `qualquercoisa@<seu-id>.resend.app` são encaminhados para `CONTACT_TO_EMAIL` pela rota `/api/inbound`.
+
+1. No Resend → **Webhooks → Add Webhook**: URL `https://SEU-SITE.vercel.app/api/inbound`, evento `email.received`.
+2. Copie o **Signing Secret** do webhook e crie na Vercel a variável `RESEND_WEBHOOK_SECRET`.
+3. Faça um novo deploy e envie um e-mail de teste para o endereço `.resend.app`.
+
 ## Domínio próprio
 Vercel → projeto → **Settings → Domains** → adicione o domínio e siga as instruções de DNS.
 
