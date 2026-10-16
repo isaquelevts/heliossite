@@ -179,6 +179,11 @@
   .pf:hover .meta .go{background:var(--accent);border-color:var(--accent)}
   .pf .meta .go svg{width:14px;height:14px}
   .pf-cta{text-align:center;margin-top:48px}
+  .shot.cover{height:auto;aspect-ratio:16/10}
+  .shot.cover img{position:static;height:100%;object-fit:cover;object-position:top;transform:none;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  .pf:hover .shot.cover img{transform:scale(1.04)}
+  .shot.cover .more{position:absolute;left:50%;bottom:16px;z-index:2;transform:translate(-50%,8px);opacity:0;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line-2);font-size:13px;font-weight:500;color:#fff;white-space:nowrap;transition:opacity .4s,transform .4s}
+  .pf:hover .shot.cover .more{opacity:1;transform:translate(-50%,0)}
 
   /* ---------- FINAL CTA ---------- */
   .cta-box{max-width:920px;margin:0 auto;border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,#b33c0e 0%,#3d1307 30%,#0d0a09 75%);position:relative;overflow:hidden;padding:100px 28px 90px;text-align:center}
@@ -494,7 +499,7 @@
       <a href="#quem-somos">Quem somos</a>
       <a href="#servicos">O que fazemos</a>
       <a href="#filosofia">Filosofia</a>
-      <a href="#portfolio">Portfólio</a>
+      <a href="/portfolio">Portfólio</a>
     </div>
     <a href="#contato" class="btn btn-primary" data-contact>Iniciar um projeto</a>
   </div>
@@ -776,26 +781,26 @@
     </div>
 
     <div class="pf-grid">
-      <a href="/projetos/caiomartins" class="pf span3 rv ">
-        <div class="shot"><img src="assets/projetos/caiomartins-full.webp" alt="Página desenvolvida para Mentoria Caio Martins" loading="lazy"></div>
+      <a href="/portfolio/caiomartins" class="pf span3 rv ">
+        <div class="shot cover"><span class="more">Ver projeto completo →</span><img src="assets/projetos/caiomartins-cover.webp" alt="Página desenvolvida para Mentoria Caio Martins" loading="lazy"></div>
         <div class="meta"><div><b>Mentoria Caio Martins</b><small>Landing page · Mentoria de Micro-SaaS</small></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
-      <a href="/projetos/dranayane" class="pf span3 rv d2">
-        <div class="shot"><img src="assets/projetos/dranayane-full.webp" alt="Página desenvolvida para Dra. Nayane de Paula" loading="lazy"></div>
+      <a href="/portfolio/dranayane" class="pf span3 rv d2">
+        <div class="shot cover"><span class="more">Ver projeto completo →</span><img src="assets/projetos/dranayane-cover.webp" alt="Página desenvolvida para Dra. Nayane de Paula" loading="lazy"></div>
         <div class="meta"><div><b>Dra. Nayane de Paula</b><small>Site institucional · Ortodontia</small></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
-      <a href="/projetos/bigbang" class="pf span3 rv ">
-        <div class="shot"><img src="assets/projetos/bigbang-full.webp" alt="Página desenvolvida para Curso Big Bang · Sérgio Sacani" loading="lazy"></div>
+      <a href="/portfolio/bigbang" class="pf span3 rv ">
+        <div class="shot cover"><span class="more">Ver projeto completo →</span><img src="assets/projetos/bigbang-cover.webp" alt="Página desenvolvida para Curso Big Bang · Sérgio Sacani" loading="lazy"></div>
         <div class="meta"><div><b>Curso Big Bang · Sérgio Sacani</b><small>Landing page · Curso de astronomia</small></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
-      <a href="/projetos/potencialize" class="pf span3 rv d2">
-        <div class="shot"><img src="assets/projetos/potencialize-full.webp" alt="Página desenvolvida para Potencialize" loading="lazy"></div>
+      <a href="/portfolio/potencialize" class="pf span3 rv d2">
+        <div class="shot cover"><span class="more">Ver projeto completo →</span><img src="assets/projetos/potencialize-cover.webp" alt="Página desenvolvida para Potencialize" loading="lazy"></div>
         <div class="meta"><div><b>Potencialize</b><small>Site institucional · Clínica de psicologia</small></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
     </div>
 
     <div class="pf-cta rv">
-      <a href="/projetos" class="btn btn-primary">Ver todos os projetos
+      <a href="/portfolio" class="btn btn-primary">Ver portfólio completo
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -870,7 +875,7 @@
           <li><a href="#manifesto">Manifesto</a></li>
           <li><a href="#quem-somos">Quem somos</a></li>
           <li><a href="#filosofia">Filosofia</a></li>
-          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="/portfolio">Portfólio</a></li>
         </ul>
       </div>
 

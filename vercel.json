@@ -1,13 +1,16 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/projetos/", "destination": "/projetos", "permanent": true },
-    { "source": "/projetos/:slug/", "destination": "/projetos/:slug", "permanent": true },
+    { "source": "/portfolio/", "destination": "/portfolio", "permanent": true },
+    { "source": "/portfolio/:slug/", "destination": "/portfolio/:slug", "permanent": true },
+    { "source": "/projetos", "destination": "/portfolio", "permanent": true },
+    { "source": "/projetos/", "destination": "/portfolio", "permanent": true },
+    { "source": "/projetos/:slug", "destination": "/portfolio/:slug", "permanent": true },
     { "source": "/sites/:slug(caiomartins|dranayane|bigbang|potencialize)", "destination": "/sites/:slug/", "permanent": true },
     { "source": "/sites/potencialize/sobre", "destination": "/sites/potencialize/sobre/", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/projetos/:slug(caiomartins|dranayane|bigbang|potencialize)", "destination": "/projeto.html" }
+    { "source": "/portfolio/:slug", "destination": "/projeto.html" }
   ],
   "headers": [
     {

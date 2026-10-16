@@ -56,17 +56,17 @@ E-mails enviados para `qualquercoisa@<seu-id>.resend.app` são encaminhados para
 2. Copie o **Signing Secret** do webhook e crie na Vercel a variável `RESEND_WEBHOOK_SECRET`.
 3. Faça um novo deploy e envie um e-mail de teste para o endereço `.resend.app`.
 
-## Projetos (portfólio)
+## Portfólio
 
-- `/projetos` (`projetos.html`) lista os projetos; `/projetos/<slug>` (`projeto.html`) mostra cada um ao vivo, no computador e no celular.
-- Os dados (nome, textos, tags, ordem) ficam em `assets/projetos.js`.
-- As páginas dos clientes ficam em `sites/<slug>/` (copiadas do repositório `sitesprospec`) e as capturas em `assets/projetos/<slug>-full.webp` e `<slug>-cover.webp`.
-- Para adicionar um projeto: copie a pasta para `sites/`, gere as duas imagens, adicione o item em `assets/projetos.js` e inclua o slug nas regras de `vercel.json`.
+- `/portfolio` (`portfolio.html`) lista todos os projetos; `/portfolio/<slug>` (`projeto.html`) mostra cada um.
+- A home mostra só a primeira seção (capa) dos projetos ao vivo; o clique leva à página do projeto.
+- Os dados (nome, textos, tags, ordem) ficam em `assets/projetos.js`. `aoVivo: true` mostra o site completo (em `sites/<slug>/`, com efeitos, no computador e no celular); `aoVivo: false` mostra a captura da página inteira.
+- Imagens: `assets/projetos/<slug>-full.webp` (página inteira) e `<slug>-cover.webp` (primeira seção, 1440×900).
+- Para adicionar um site ao vivo: copie a pasta para `sites/`, gere as duas imagens, adicione o item em `assets/projetos.js` e inclua o slug na regra `/sites/...` do `vercel.json`. Ao editar `projetos.js` ou `projetos.css`, aumente o `?v=` nos HTML (os assets têm cache longo).
 
 ## Domínio próprio
 Vercel → projeto → **Settings → Domains** → adicione o domínio e siga as instruções de DNS.
 
 ## Pendências antes de divulgar
-- Trocar os `href="#"` dos cards do portfólio pelos links reais dos sites dos clientes.
 - Confirmar o domínio exibido na ilustração do card "SEO & GEO" (`helioscreative.com.br`).
-- Substituir as prints do portfólio por versões em maior resolução (ideal ~1400px de largura), mantendo os mesmos nomes de arquivo.
+- Substituir as capturas de Best2Travel, Vittare, Serenique e Sofi por versões em maior resolução (ideal ~1400px de largura), mantendo os nomes em `assets/projetos/`.

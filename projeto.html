@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/projetos.css">
+<link rel="stylesheet" href="/assets/projetos.css?v=2">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
       <a href="/#quem-somos">Quem somos</a>
       <a href="/#servicos">O que fazemos</a>
       <a href="/#filosofia">Filosofia</a>
-      <a href="/projetos" aria-current="page">Projetos</a>
+      <a href="/portfolio" aria-current="page">Portfólio</a>
     </div>
     <a href="/#contato" class="btn btn-primary">Iniciar um projeto</a>
   </div>
@@ -32,7 +32,7 @@
   <div class="p-grid" aria-hidden="true"></div>
   <div class="p-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <a class="back rv" href="/projetos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Todos os projetos</a>
+    <a class="back rv" href="/portfolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Todo o portfólio</a>
     <div class="pj-head">
       <div>
         <span class="badge rv d1"><i></i><span data-f="tipo"></span></span>
@@ -65,12 +65,14 @@
         <button type="button" data-dev="desktop" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Computador</button>
         <button type="button" data-dev="mobile" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>Celular</button>
       </div>
-      <span class="v-note">Navegue à vontade: é o site de verdade, funcionando aqui dentro.</span>
+      <span class="v-note" data-note>Navegue à vontade: é o site de verdade, com todos os efeitos.</span>
+      <button type="button" class="btn btn-ghost v-full" data-full><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>Tela cheia</button>
     </div>
     <div class="stage" id="stage">
       <div class="frame" id="frame">
         <div class="frame-bar"><s></s><s></s><s></s><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span data-f="url"></span></span></div>
-        <iframe id="site" title="Site do projeto" loading="lazy"></iframe>
+        <iframe id="site" title="Site do projeto"></iframe>
+        <div class="capture" id="capture" hidden><img alt=""></div>
         <div class="loading"><span>Carregando o site…</span></div>
       </div>
     </div>
@@ -118,7 +120,7 @@
       <div class="ft-links">
         <a href="/#quem-somos">Quem somos</a>
         <a href="/#servicos">O que fazemos</a>
-        <a href="/projetos">Projetos</a>
+        <a href="/portfolio">Portfólio</a>
         <a href="/#contato">Contato</a>
       </div>
     </div>
@@ -126,17 +128,17 @@
   </div>
 </footer>
 
-<script src="/assets/projetos.js"></script>
+<script src="/assets/projetos.js?v=2"></script>
 <script>
-  // /projetos/<slug> (Vercel) ou ?p=<slug> (teste local)
+  // /portfolio/<slug> (Vercel) ou ?p=<slug> (teste local)
   const slug = new URLSearchParams(location.search).get('p') || location.pathname.replace(/\/+$/, '').split('/').pop();
   const idx = PROJETOS.findIndex(p => p.slug === slug);
-  if (idx < 0) location.replace('/projetos');
+  if (idx < 0) location.replace("/portfolio");
   const p = PROJETOS[Math.max(idx, 0)];
   const site = `/sites/${p.slug}/`;
   const fill = (key, val) => document.querySelectorAll(`[data-f="${key}"]`).forEach(el => el.textContent = val);
 
-  document.title = `${p.nome} — Projetos Helios Creative`;
+  document.title = `${p.nome} — Portfólio Helios Creative`;
   document.querySelector('meta[name="description"]').content = p.resumo;
   document.documentElement.style.setProperty('--c', p.cor);
   ['nome', 'tipo', 'segmento', 'resumo', 'desafio'].forEach(k => fill(k, p[k]));
@@ -151,23 +153,45 @@
   [['prev', -1], ['next', 1]].forEach(([k, d]) => {
     const o = PROJETOS[(idx + d + PROJETOS.length) % PROJETOS.length];
     const a = document.querySelector(`[data-pn="${k}"]`);
-    a.href = `/projetos/${o.slug}`;
+    a.href = `/portfolio/${o.slug}`;
     a.querySelector('img').src = `/assets/projetos/${o.slug}-cover.webp`;
     a.querySelector('b').textContent = o.nome;
   });
 
-  // Visualizador: carrega o site e alterna computador/celular
+  // Visualizador
   const stage = document.getElementById('stage'), frame = document.getElementById('frame'), iframe = document.getElementById('site');
-  iframe.title = `Site ${p.nome}`;
-  iframe.addEventListener('load', () => frame.classList.add('ready'));
-  iframe.src = site;
   const btns = document.querySelectorAll('[data-dev]');
   const setDev = dev => {
     stage.classList.toggle('mobile', dev === 'mobile');
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.dev === dev)));
   };
-  btns.forEach(b => b.addEventListener('click', () => setDev(b.dataset.dev)));
-  if (matchMedia('(max-width: 640px)').matches) setDev('mobile');
+  if (p.aoVivo) {
+    // Site completo, com efeitos, rodando dentro da moldura
+    iframe.title = `Site ${p.nome}`;
+    iframe.addEventListener('load', () => frame.classList.add('ready'));
+    iframe.src = site;
+    btns.forEach(b => b.addEventListener('click', () => setDev(b.dataset.dev)));
+    if (matchMedia('(max-width: 640px)').matches) setDev('mobile');
+  } else {
+    // Sem site publicado: mostra a captura da página inteira, rolável
+    iframe.remove();
+    stage.classList.add('shot-mode');
+    const cap = document.getElementById('capture');
+    cap.hidden = false;
+    const img = cap.querySelector('img');
+    img.alt = `Página completa desenvolvida para ${p.nome}`;
+    img.addEventListener('load', () => frame.classList.add('ready'));
+    img.src = `/assets/projetos/${p.slug}-full.webp`;
+    document.querySelector('.seg-ctl').hidden = true;
+    document.querySelector('[data-site]').hidden = true;
+    document.querySelector('[data-note]').textContent = 'Role dentro da moldura para ver a página completa.';
+    fill('url', 'Captura da página completa');
+  }
+
+  // Tela cheia (a moldura inteira)
+  const fullBtn = document.querySelector('[data-full]');
+  if (!frame.requestFullscreen) fullBtn.hidden = true;
+  fullBtn.addEventListener('click', () => frame.requestFullscreen().catch(() => {}));
 </script>
 </body>
 </html>
