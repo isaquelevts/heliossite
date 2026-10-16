@@ -201,3 +201,25 @@ nav.scrolled .nav-in{max-width:880px;background:rgba(14,11,10,.82);box-shadow:0 
   .badge::before,.btn-primary::after{animation:none}
   .case-shot img{transition:none}
 }
+
+/* ---------- visualizador: tela grande, tela cheia e captura ---------- */
+.v-bar .v-note{margin-left:auto}
+.v-full{padding:9px 14px;font-size:12px}
+.v-full svg{width:14px;height:14px}
+.v-full:hover svg{transform:scale(1.1)}
+.frame iframe{height:calc(100vh - 150px);min-height:520px;max-height:none}
+.stage.mobile .frame iframe{height:min(calc(100vh - 170px),780px);min-height:0}
+.capture{height:calc(100vh - 150px);min-height:520px;overflow-y:auto;overscroll-behavior:contain;background:#fff}
+.capture img{width:100%;height:auto}
+.frame:fullscreen{width:100%;border-radius:0;border:0}
+.frame:fullscreen iframe,.frame:fullscreen .capture{height:calc(100vh - 38px)}
+.stage.mobile .frame:fullscreen{width:100%;border:0;border-radius:0}
+@media (max-width:640px){
+  .v-full{display:none}
+  .frame iframe,.capture{height:72vh;min-height:0}
+}
+.viewer{--vw:min(1400px,calc(100vw - 48px));width:var(--vw);margin-left:calc(50% - var(--vw) / 2)}
+@media (max-width:640px){.viewer{--vw:calc(100vw - 32px)}}
+[hidden]{display:none!important}
+/* Projetos só com captura: moldura mais estreita para a imagem não esticar */
+.stage.shot-mode .frame{max-width:980px}
