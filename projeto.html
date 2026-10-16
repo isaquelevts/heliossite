@@ -131,7 +131,7 @@
 <script src="/assets/projetos.js?v=2"></script>
 <script>
   // /portfolio/<slug> (Vercel) ou ?p=<slug> (teste local)
-  const slug = new URLSearchParams(location.search).get('p') || location.pathname.replace(/\/+$/, '').split('/').pop();
+  const slug = new URLSearchParams(location.search).get('p') || location.pathname.replace(/\/+$/, '').replace(/\.html$/, '').split('/').pop();
   const idx = PROJETOS.findIndex(p => p.slug === slug);
   if (idx < 0) location.replace("/portfolio");
   const p = PROJETOS[Math.max(idx, 0)];
