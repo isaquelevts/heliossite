@@ -131,10 +131,12 @@
 <script src="/assets/projetos.js?v=2"></script>
 <script>
   // /portfolio/<slug> (Vercel) ou ?p=<slug> (teste local)
-  const slug = new URLSearchParams(location.search).get('p') || location.pathname.replace(/\/+$/, '').split('/').pop();
-  const idx = PROJETOS.findIndex(p => p.slug === slug);
+  const slug = new URLSearchParams(location.search).get('p') || location.pathname.replace(/\/+$/, '').replace(/\.html$/, '').split('/').pop();
+  // Só os projetos com site completo têm página própria
+  const LISTA = PROJETOS.filter(p => p.aoVivo);
+  const idx = LISTA.findIndex(p => p.slug === slug);
   if (idx < 0) location.replace("/portfolio");
-  const p = PROJETOS[Math.max(idx, 0)];
+  const p = LISTA[Math.max(idx, 0)];
   const site = `/sites/${p.slug}/`;
   const fill = (key, val) => document.querySelectorAll(`[data-f="${key}"]`).forEach(el => el.textContent = val);
 
@@ -142,7 +144,7 @@
   document.querySelector('meta[name="description"]').content = p.resumo;
   document.documentElement.style.setProperty('--c', p.cor);
   ['nome', 'tipo', 'segmento', 'resumo', 'desafio'].forEach(k => fill(k, p[k]));
-  fill('pos', `${String(idx + 1).padStart(2, '0')} de ${String(PROJETOS.length).padStart(2, '0')}`);
+  fill('pos', `${String(idx + 1).padStart(2, '0')} de ${String(LISTA.length).padStart(2, '0')}`);
   fill('url', location.host + site);
   document.querySelector('[data-f="solucao"]').innerHTML = '';
   p.solucao.forEach(s => { const li = document.createElement('li'); li.textContent = s; document.querySelector('[data-f="solucao"]').appendChild(li); });
@@ -151,7 +153,7 @@
 
   // Anterior / próximo (circular)
   [['prev', -1], ['next', 1]].forEach(([k, d]) => {
-    const o = PROJETOS[(idx + d + PROJETOS.length) % PROJETOS.length];
+    const o = LISTA[(idx + d + LISTA.length) % LISTA.length];
     const a = document.querySelector(`[data-pn="${k}"]`);
     a.href = `/portfolio/${o.slug}`;
     a.querySelector('img').src = `/assets/projetos/${o.slug}-cover.webp`;

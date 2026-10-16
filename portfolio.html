@@ -84,10 +84,10 @@
 
   document.getElementById('cases').innerHTML = PROJETOS.map((p, i) => `
     <article class="case spot rv" data-tipo="${esc(p.tipo)}" style="--c:${p.cor}">
-      <a class="case-shot" href="/portfolio/${p.slug}" aria-label="Ver o projeto ${esc(p.nome)}">
+      <${p.aoVivo ? `a href="/portfolio/${p.slug}" aria-label="Ver o projeto ${esc(p.nome)}"` : 'div'} class="case-shot">
         <img src="/assets/projetos/${p.slug}-full.webp" alt="Página desenvolvida para ${esc(p.nome)}" loading="${i < 2 ? 'eager' : 'lazy'}">
-        <span class="hint">Passe o mouse para rolar</span>
-      </a>
+        <span class="hint"${p.aoVivo ? ' data-live' : ''}>Passe o mouse para rolar</span>
+      </${p.aoVivo ? 'a' : 'div'}>
       <div class="case-body">
         <div class="case-top">
           <span class="case-n">${String(i + 1).padStart(2, '0')} / ${String(PROJETOS.length).padStart(2, '0')}</span>
@@ -97,16 +97,16 @@
         <div class="seg">${esc(p.segmento)}</div>
         <p class="desc">${esc(p.resumo)}</p>
         <div class="tags">${p.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>
-        <div class="case-actions">
+        ${p.aoVivo ? `<div class="case-actions">
           <a class="btn btn-primary" href="/portfolio/${p.slug}">Ver projeto ${arrow}</a>
-          ${p.aoVivo ? `<a class="btn btn-ghost" href="/sites/${p.slug}/" target="_blank" rel="noopener">Abrir site ${ext}</a>` : ''}
-        </div>
+          <a class="btn btn-ghost" href="/sites/${p.slug}/" target="_blank" rel="noopener">Abrir site ${ext}</a>
+        </div>` : ''}
       </div>
     </article>`).join('');
   window.revealAll && window.revealAll();
 
   // Toque não tem hover: troca a dica
-  if (!matchMedia('(hover: hover)').matches) document.querySelectorAll('.case-shot .hint').forEach(h => h.textContent = 'Toque para ver o projeto');
+  if (!matchMedia('(hover: hover)').matches) document.querySelectorAll('.case-shot .hint').forEach(h => h.textContent = h.hasAttribute('data-live') ? 'Toque para ver o projeto' : 'Prévia da página');
 
   // Filtros
   const btns = document.querySelectorAll('.filters button');

@@ -1,21 +1,51 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/portfolio/", "destination": "/portfolio", "permanent": true },
-    { "source": "/portfolio/:slug/", "destination": "/portfolio/:slug", "permanent": true },
-    { "source": "/projetos", "destination": "/portfolio", "permanent": true },
-    { "source": "/projetos/", "destination": "/portfolio", "permanent": true },
-    { "source": "/projetos/:slug", "destination": "/portfolio/:slug", "permanent": true },
-    { "source": "/sites/:slug(caiomartins|dranayane|bigbang|potencialize)", "destination": "/sites/:slug/", "permanent": true },
-    { "source": "/sites/potencialize/sobre", "destination": "/sites/potencialize/sobre/", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/portfolio/:slug", "destination": "/projeto.html" }
+    {
+      "source": "/portfolio/",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/:slug/",
+      "destination": "/portfolio/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/projetos",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/projetos/",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/projetos/:slug",
+      "destination": "/portfolio/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/sites/:slug(caiomartins|dranayane|bigbang|potencialize)",
+      "destination": "/sites/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/sites/potencialize/sobre",
+      "destination": "/sites/potencialize/sobre/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }
