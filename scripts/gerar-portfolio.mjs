@@ -5,7 +5,8 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 
 const dados = readFileSync('assets/projetos.js', 'utf8');
-const slugs = [...dados.matchAll(/^\s*slug:\s*'([^']+)'/gm)].map(m => m[1]);
+// Só projetos com site completo (aoVivo: true) têm página própria
+const slugs = [...dados.matchAll(/slug:\s*'([^']+)',\s*aoVivo:\s*true/g)].map(m => m[1]);
 const modelo = readFileSync('projeto.html', 'utf8');
 
 mkdirSync('portfolio', { recursive: true });

@@ -58,7 +58,7 @@ E-mails enviados para `qualquercoisa@<seu-id>.resend.app` são encaminhados para
 
 ## Portfólio
 
-- `/portfolio` (`portfolio.html`) lista todos os projetos; `/portfolio/<slug>` mostra cada um. As páginas `portfolio/<slug>.html` são cópias de `projeto.html` geradas por `node scripts/gerar-portfolio.mjs` — rode o script sempre que mudar `projeto.html` ou a lista de projetos.
+- `/portfolio` (`portfolio.html`) lista todos os projetos; `/portfolio/<slug>` mostra cada um. As páginas `portfolio/<slug>.html` são cópias de `projeto.html` geradas por `node scripts/gerar-portfolio.mjs` — rode o script sempre que mudar `projeto.html` ou a lista de projetos. Só projetos com `aoVivo: true` ganham página e são clicáveis; os demais aparecem apenas como prévia em `/portfolio`.
 - A home mostra só a primeira seção (capa) dos projetos ao vivo; o clique leva à página do projeto.
 - Os dados (nome, textos, tags, ordem) ficam em `assets/projetos.js`. `aoVivo: true` mostra o site completo (em `sites/<slug>/`, com efeitos, no computador e no celular); `aoVivo: false` mostra a captura da página inteira.
 - Imagens: `assets/projetos/<slug>-full.webp` (página inteira) e `<slug>-cover.webp` (primeira seção, 1440×900).
