@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projetos — Helios Creative</title>
+<meta name="description" content="Sites e landing pages criados pela Helios Creative. Veja cada projeto ao vivo, no computador e no celular.">
+<link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Projetos — Helios Creative">
+<meta property="og:description" content="Sites e landing pages criados pela Helios Creative.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/projetos.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+<nav>
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Helios Creative — início"><img src="/assets/logo.svg" alt="Helios Creative" width="150" height="40"></a>
+    <div class="nav-links">
+      <a href="/#quem-somos">Quem somos</a>
+      <a href="/#servicos">O que fazemos</a>
+      <a href="/#filosofia">Filosofia</a>
+      <a href="/projetos" aria-current="page">Projetos</a>
+    </div>
+    <a href="/#contato" class="btn btn-primary">Iniciar um projeto</a>
+  </div>
+</nav>
+
+<header class="p-hero center">
+  <div class="p-grid" aria-hidden="true"></div>
+  <div class="p-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="badge rv"><i></i>Projetos</span>
+    <h1 class="h-xl rv d1">Empresas apresentadas <span class="grey">como merecem.</span></h1>
+    <p class="lead rv d2">Cada página nasce do entendimento de uma empresa: o que ela é, para quem fala e o que precisa que o visitante faça. Escolha um projeto para ver ao vivo, no computador e no celular.</p>
+    <div class="filters rv d3" role="group" aria-label="Filtrar projetos">
+      <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+      <button type="button" data-f="Landing page" aria-pressed="false">Landing pages</button>
+      <button type="button" data-f="Site institucional" aria-pressed="false">Sites institucionais</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="cases" id="cases"></div>
+
+  <section class="cta-box">
+    <span class="badge rv"><i></i>Próximo projeto</span>
+    <h2 class="h-lg rv d1">O próximo pode ser o seu.</h2>
+    <p class="lead rv d2">Conte para a Helios sobre a sua empresa e o que ela precisa comunicar.</p>
+    <div class="rv d3">
+      <a href="/#contato" class="btn btn-primary">Iniciar um projeto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-in">
+      <a href="/" aria-label="Helios Creative — início"><img src="/assets/logo.svg" alt="Helios Creative" width="150" height="40" loading="lazy"></a>
+      <div class="ft-links">
+        <a href="/#quem-somos">Quem somos</a>
+        <a href="/#servicos">O que fazemos</a>
+        <a href="/projetos">Projetos</a>
+        <a href="/#contato">Contato</a>
+      </div>
+    </div>
+    <div class="ft-bottom">© <span id="y"></span> Helios Creative. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<script src="/assets/projetos.js"></script>
+<script>
+  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  const ext = '<svg class="up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  document.getElementById('cases').innerHTML = PROJETOS.map((p, i) => `
+    <article class="case spot rv" data-tipo="${esc(p.tipo)}" style="--c:${p.cor}">
+      <a class="case-shot" href="/projetos/${p.slug}" aria-label="Ver o projeto ${esc(p.nome)}">
+        <img src="/assets/projetos/${p.slug}-full.webp" alt="Página desenvolvida para ${esc(p.nome)}" loading="${i < 2 ? 'eager' : 'lazy'}">
+        <span class="hint">Passe o mouse para rolar</span>
+      </a>
+      <div class="case-body">
+        <div class="case-top">
+          <span class="case-n">${String(i + 1).padStart(2, '0')} / ${String(PROJETOS.length).padStart(2, '0')}</span>
+          <span class="case-kind"><i></i>${esc(p.tipo)}</span>
+        </div>
+        <h2>${esc(p.nome)}</h2>
+        <div class="seg">${esc(p.segmento)}</div>
+        <p class="desc">${esc(p.resumo)}</p>
+        <div class="tags">${p.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+        <div class="case-actions">
+          <a class="btn btn-primary" href="/projetos/${p.slug}">Ver projeto ${arrow}</a>
+          <a class="btn btn-ghost" href="/sites/${p.slug}/" target="_blank" rel="noopener">Abrir site ${ext}</a>
+        </div>
+      </div>
+    </article>`).join('');
+  window.revealAll && window.revealAll();
+
+  // Toque não tem hover: troca a dica
+  if (!matchMedia('(hover: hover)').matches) document.querySelectorAll('.case-shot .hint').forEach(h => h.textContent = 'Toque para ver o projeto');
+
+  // Filtros
+  const btns = document.querySelectorAll('.filters button');
+  btns.forEach(b => {
+    const n = b.dataset.f === 'todos' ? PROJETOS.length : PROJETOS.filter(p => p.tipo === b.dataset.f).length;
+    b.insertAdjacentHTML('beforeend', `<span>${n}</span>`);
+    b.addEventListener('click', () => {
+      btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      document.querySelectorAll('.case').forEach(c => { c.hidden = b.dataset.f !== 'todos' && c.dataset.tipo !== b.dataset.f; });
+    });
+  });
+</script>
+</body>
+</html>
