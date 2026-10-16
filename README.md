@@ -68,6 +68,5 @@ E-mails enviados para `qualquercoisa@<seu-id>.resend.app` são encaminhados para
 Vercel → projeto → **Settings → Domains** → adicione o domínio e siga as instruções de DNS.
 
 ## Pendências antes de divulgar
-- Trocar os `href="#"` dos cards do portfólio pelos links reais dos sites dos clientes.
 - Confirmar o domínio exibido na ilustração do card "SEO & GEO" (`helioscreative.com.br`).
-- Substituir as prints do portfólio por versões em maior resolução (ideal ~1400px de largura), mantendo os mesmos nomes de arquivo.
+- Substituir as capturas de Best2Travel, Vittare, Serenique e Sofi por versões em maior resolução (ideal ~1400px de largura), mantendo os nomes em `assets/projetos/`.
