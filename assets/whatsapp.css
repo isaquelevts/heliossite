@@ -1,0 +1,39 @@
+/* Contato flutuante compartilhado pelas páginas da Helios. */
+.helios-whatsapp {
+  position: fixed;
+  right: calc(24px + env(safe-area-inset-right, 0px));
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 50%;
+  background: #25d366;
+  color: #062f18;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.helios-whatsapp svg { display: block; width: 32px; height: 32px; fill: currentColor; }
+.helios-whatsapp:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (hover: hover) {
+  .helios-whatsapp:hover {
+    transform: translateY(-3px);
+    background: #2ee575;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .45);
+  }
+}
+@media (max-width: 640px) {
+  .helios-whatsapp {
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 56px;
+    height: 56px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .helios-whatsapp { transition: none; }
+  .helios-whatsapp:hover { transform: none; }
+}
