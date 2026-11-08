@@ -3,6 +3,7 @@
 //   RESEND_API_KEY      chave da API do Resend
 //   CONTACT_TO_EMAIL    e-mail que recebe os contatos
 //   CONTACT_FROM_EMAIL  remetente (opcional; padrão: onboarding@resend.dev)
+//   WEBHOOK_URL         webhook que recebe os leads em JSON (opcional se o e-mail estiver configurado)
 
 const FIELDS = ['nome', 'empresa', 'whatsapp', 'email', 'site', 'servico', 'mensagem'];
 const LABELS = {
@@ -33,12 +34,34 @@ export default async function handler(req, res) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return res.status(400).json({ error: 'E-mail inválido' });
   if (data.whatsapp.replace(/\D/g, '').length < 10) return res.status(400).json({ error: 'WhatsApp inválido' });
 
-  const { RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL } = process.env;
-  if (!RESEND_API_KEY || !CONTACT_TO_EMAIL) {
-    console.error('Formulário: configure RESEND_API_KEY e CONTACT_TO_EMAIL nas variáveis de ambiente da Vercel.');
+  const { RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, WEBHOOK_URL } = process.env;
+  const emailOn = !!(RESEND_API_KEY && CONTACT_TO_EMAIL);
+  if (!emailOn && !WEBHOOK_URL) {
+    console.error('Formulário: configure WEBHOOK_URL (ou RESEND_API_KEY + CONTACT_TO_EMAIL) nas variáveis de ambiente da Vercel.');
     return res.status(500).json({ error: 'Envio não configurado' });
   }
 
+  let ok = false;
+
+  if (WEBHOOK_URL) {
+    try {
+      const w = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, origem: 'lp.helioscreative.com.br', enviado_em: new Date().toISOString() }),
+      });
+      if (w.ok) ok = true; else console.error('Webhook falhou', w.status, await w.text());
+    } catch (e) { console.error('Webhook erro', e); }
+  }
+
+  if (emailOn) {
+    if (await sendEmail()) ok = true;
+  }
+
+  if (!ok) return res.status(502).json({ error: 'Falha ao enviar' });
+  return done();
+
+  async function sendEmail() {
   const rows = FIELDS.filter(f => data[f])
     .map(f => `<tr><td style="padding:8px 14px 8px 0;color:#888;vertical-align:top;white-space:nowrap">${LABELS[f]}</td><td style="padding:8px 0;color:#111">${esc(data[f]).replace(/\n/g, '<br>')}</td></tr>`)
     .join('');
@@ -63,7 +86,8 @@ export default async function handler(req, res) {
 
   if (!r.ok) {
     console.error('Resend falhou', r.status, await r.text());
-    return res.status(502).json({ error: 'Falha ao enviar' });
+    return false;
   }
-  return done();
+  return true;
+  }
 }
