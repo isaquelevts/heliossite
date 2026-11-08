@@ -446,12 +446,28 @@
   .cm-submit.loading svg{animation:cmspin .8s linear infinite}
   @keyframes cmspin{to{transform:rotate(360deg)}}
   .cm-note{text-align:center;font-size:12.5px;color:var(--dim)}
+  .cm-progress{display:grid;gap:8px}
+  .cm-bar{height:6px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden}
+  .cm-bar i{display:block;height:100%;width:8%;border-radius:inherit;background:linear-gradient(90deg,#ff5a1f,#ff8a4c);transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .cm-hint{font-size:12.5px;color:var(--muted);transition:opacity .25s}
+  .cm-step{display:grid;gap:16px}
+  .cm-step[hidden]{display:none}
+  .cm-step.is-active{animation:cmstep .45s cubic-bezier(.2,.7,.2,1)}
+  .cm-step.is-back{animation-name:cmstepback}
+  @keyframes cmstep{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+  @keyframes cmstepback{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+  .cm-actions{display:flex;gap:10px;align-items:stretch}
+  .cm-actions .cm-submit{flex:1;margin-top:0}
+  .cm-back{display:inline-flex;align-items:center;gap:8px;padding:0 18px;border-radius:10px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:#d6cfca;font:inherit;font-size:14px;cursor:pointer;transition:background .25s,border-color .25s}
+  .cm-back[hidden]{display:none}
+  .cm-back:hover{background:rgba(255,255,255,.07);border-color:rgba(255,122,61,.5)}
+  .cm-back svg{width:16px;height:16px}
   @media (max-width:600px){
     .cm{padding:0;place-items:end stretch}
     .cm-panel{max-width:none;max-height:92dvh;border-radius:22px 22px 0 0;padding:34px 20px 24px;transform:translateY(40px)}
     .cm-grid{grid-template-columns:1fr}
   }
-  @media (prefers-reduced-motion:reduce){.cm-panel,.cm-backdrop{transition:none}}
+  @media (prefers-reduced-motion:reduce){.cm-panel,.cm-backdrop,.cm-bar i{transition:none}.cm-step.is-active{animation:none}}
 
   /* =========================================================
      RODAPÉ
@@ -851,24 +867,41 @@
       <p>Preencha os campos abaixo e retornamos com uma análise do seu projeto.</p>
     </div>
     <form class="cm-form" id="contact-form" action="/api/contact" method="POST" novalidate>
-      <div class="cm-grid">
-        <label class="cm-field"><span>Nome</span><input name="nome" type="text" autocomplete="name" required placeholder="Seu nome"></label>
-        <label class="cm-field"><span>Empresa</span><input name="empresa" type="text" autocomplete="organization" required placeholder="Nome da empresa"></label>
-        <label class="cm-field"><span>WhatsApp</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></label>
-        <label class="cm-field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required placeholder="voce@empresa.com.br"></label>
-        <label class="cm-field cm-wide"><span>Site atual <em>(opcional)</em></span><input name="site" type="text" inputmode="url" placeholder="www.suaempresa.com.br"></label>
+      <div class="cm-progress" aria-hidden="true">
+        <div class="cm-bar"><i></i></div>
+        <span class="cm-hint">Leva menos de 1 minuto</span>
       </div>
-      <fieldset class="cm-need">
-        <legend>O que você precisa?</legend>
-        <div class="cm-chips"><label class="cm-chip"><input type="radio" name="servico" value="Site institucional" required><span>Site institucional</span></label><label class="cm-chip"><input type="radio" name="servico" value="Landing page"><span>Landing page</span></label><label class="cm-chip"><input type="radio" name="servico" value="SEO &amp; GEO"><span>SEO &amp; GEO</span></label><label class="cm-chip"><input type="radio" name="servico" value="Ainda não sei"><span>Ainda não sei</span></label></div>
-      </fieldset>
-      <label class="cm-field cm-wide"><span>Conte um pouco sobre o projeto <em>(opcional)</em></span><textarea name="mensagem" rows="3" placeholder="Objetivo, prazo, referências…"></textarea></label>
+      <div class="cm-step is-active" data-step="0">
+        <div class="cm-grid">
+          <label class="cm-field"><span>Nome</span><input name="nome" type="text" autocomplete="name" required placeholder="Seu nome"></label>
+          <label class="cm-field"><span>Empresa</span><input name="empresa" type="text" autocomplete="organization" required placeholder="Nome da empresa"></label>
+        </div>
+      </div>
+      <div class="cm-step" data-step="1" hidden>
+        <div class="cm-grid">
+          <label class="cm-field"><span>WhatsApp</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></label>
+          <label class="cm-field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required placeholder="voce@empresa.com.br"></label>
+        </div>
+      </div>
+      <div class="cm-step" data-step="2" hidden>
+        <fieldset class="cm-need">
+          <legend>O que você precisa?</legend>
+          <div class="cm-chips"><label class="cm-chip"><input type="radio" name="servico" value="Site institucional" required><span>Site institucional</span></label><label class="cm-chip"><input type="radio" name="servico" value="Landing page"><span>Landing page</span></label><label class="cm-chip"><input type="radio" name="servico" value="SEO &amp; GEO"><span>SEO &amp; GEO</span></label><label class="cm-chip"><input type="radio" name="servico" value="Ainda não sei"><span>Ainda não sei</span></label></div>
+        </fieldset>
+        <label class="cm-field cm-wide"><span>Conte um pouco sobre o projeto <em>(opcional)</em></span><textarea name="mensagem" rows="3" placeholder="Objetivo, prazo, referências, site atual…"></textarea></label>
+      </div>
       <input class="cm-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="cm-error" role="alert" hidden></p>
-      <button class="btn btn-primary cm-submit" type="submit">
-        <span class="cm-label">Enviar projeto</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
+      <div class="cm-actions">
+        <button class="cm-back" type="button" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          Voltar
+        </button>
+        <button class="btn btn-primary cm-submit" type="submit">
+          <span class="cm-label">Continuar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
       <p class="cm-note">Seus dados são usados apenas para responder ao seu contato.</p>
     </form>
   </div>
@@ -1151,7 +1184,7 @@ addEventListener('DOMContentLoaded', () => {
       document.documentElement.classList.add('cm-lock');
       window.lenis && window.lenis.stop();
       requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('open')));
-      setTimeout(() => form.querySelector('input[name="nome"]').focus({ preventScroll: true }), 200);
+      setTimeout(() => form.querySelector('.cm-step:not([hidden]) input')?.focus({ preventScroll: true }), 200);
     }
     function close() {
       modal.classList.remove('open');
@@ -1184,29 +1217,77 @@ addEventListener('DOMContentLoaded', () => {
         : `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
     });
 
-    function validate() {
+    // ---- Etapas ----
+    const steps = [...form.querySelectorAll('.cm-step')];
+    const STEP_FIELDS = [['nome', 'empresa'], ['whatsapp', 'email'], ['servico']];
+    const HINTS = ['Leva menos de 1 minuto', 'Falta pouco', 'Último passo'];
+    const backBtn = form.querySelector('.cm-back');
+    const label = btn.querySelector('.cm-label');
+    const bar = form.querySelector('.cm-bar i');
+    const hint = form.querySelector('.cm-hint');
+    let step = 0;
+
+    const isGood = n => {
+      if (n === 'servico') return !!form.querySelector('input[name="servico"]:checked');
+      const v = form.elements[n].value.trim();
+      if (n === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      if (n === 'whatsapp') return v.replace(/\D/g, '').length >= 10;
+      return v.length > 1;
+    };
+
+    // Barra "inteligente": avança muito nos primeiros campos e desacelera no fim.
+    // Cada item preenchido vale menos que o anterior; só chega a 100% no envio.
+    const ORDER = ['nome', 'empresa', 'whatsapp', 'email', 'servico', 'mensagem'];
+    const GAINS = [26, 18, 12, 9, 7, 4];
+    function updateBar(final) {
+      let p = 12; // já começa com um pouco preenchido
+      ORDER.forEach((n, i) => {
+        const done = n === 'mensagem' ? form.elements.mensagem.value.trim().length > 3 : isGood(n);
+        if (done) p += GAINS[i];
+      });
+      p += step * 3; // chegar numa etapa nova também conta um pouquinho
+      bar.style.width = (final ? 100 : Math.min(p, 94)) + '%';
+    }
+
+    function showStep(n, back) {
+      steps.forEach((s, i) => {
+        const on = i === n;
+        s.hidden = !on;
+        s.classList.toggle('is-active', on);
+        s.classList.toggle('is-back', on && !!back);
+      });
+      step = n;
+      backBtn.hidden = n === 0;
+      label.textContent = n === steps.length - 1 ? 'Enviar projeto' : 'Continuar';
+      hint.textContent = HINTS[n];
+      errBox.hidden = true;
+      updateBar();
+      const first = steps[n].querySelector('input:not([type=radio]), input[type=radio]');
+      if (first && !modal.hidden) setTimeout(() => first.focus({ preventScroll: true }), 60);
+    }
+    backBtn.addEventListener('click', () => showStep(step - 1, true));
+
+    function validate(n) {
       let ok = true;
-      ['nome', 'empresa', 'whatsapp', 'email'].forEach(n => {
-        const el = form.elements[n];
-        let good = el.value.trim().length > 1;
-        if (n === 'email') good = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
-        if (n === 'whatsapp') good = el.value.replace(/\D/g, '').length >= 10;
-        el.closest('.cm-field').classList.toggle('bad', !good);
-        if (!good && ok) el.focus();
+      STEP_FIELDS[n].forEach(f => {
+        const good = isGood(f);
+        const box = f === 'servico' ? form.querySelector('.cm-need') : form.elements[f].closest('.cm-field');
+        box.classList.toggle('bad', !good);
+        if (!good && ok && f !== 'servico') form.elements[f].focus();
         ok = ok && good;
       });
-      const need = form.querySelector('.cm-need');
-      const picked = !!form.querySelector('input[name="servico"]:checked');
-      need.classList.toggle('bad', !picked);
-      return ok && picked;
+      return ok;
     }
-    form.addEventListener('input', e => e.target.closest('.cm-field')?.classList.remove('bad'));
-    form.addEventListener('change', e => { if (e.target.name === 'servico') form.querySelector('.cm-need').classList.remove('bad'); });
+    form.addEventListener('input', e => { e.target.closest('.cm-field')?.classList.remove('bad'); updateBar(); });
+    form.addEventListener('change', e => { if (e.target.name === 'servico') form.querySelector('.cm-need').classList.remove('bad'); updateBar(); });
+    updateBar();
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
       errBox.hidden = true;
-      if (!validate()) { errBox.textContent = 'Confira os campos destacados.'; errBox.hidden = false; return; }
+      if (!validate(step)) { errBox.textContent = 'Confira os campos destacados.'; errBox.hidden = false; return; }
+      if (step < steps.length - 1) { showStep(step + 1); return; }
+      updateBar(true);
       btn.disabled = true; btn.classList.add('loading'); btn.querySelector('.cm-label').textContent = 'Enviando…';
       try {
         const data = Object.fromEntries(new FormData(form));
@@ -1217,6 +1298,7 @@ addEventListener('DOMContentLoaded', () => {
         errBox.textContent = 'Não foi possível enviar agora. Tente novamente em instantes.';
         errBox.hidden = false;
         btn.disabled = false; btn.classList.remove('loading'); btn.querySelector('.cm-label').textContent = 'Enviar projeto';
+        updateBar();
       }
     });
   })();
